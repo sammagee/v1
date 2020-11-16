@@ -59,6 +59,10 @@
   @apply outline-none relative;
 }
 
+::selection {
+  @apply bg-yellow-500 text-black;
+}
+
 .rise {
   @apply shadow-md transition-all duration-200 ease-in-out transform;
 }
