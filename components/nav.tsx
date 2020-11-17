@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import NavLink from './nav-link'
 import { Menu, Transition } from '@headlessui/react'
 
@@ -5,12 +6,14 @@ export default function Nav() {
     return (
       <header className="container fixed top-0 left-0 right-0 z-10 flex items-center justify-between p-8 mx-auto">
         <div className="flex-1">
-          <a className="flex w-24 h-24 text-yellow-500 rounded-full rise" href="/" aria-label="Home">
-            <svg className="w-24 h-24 rounded-full" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect className="text-gray-900" fill="currentColor" width="128" height="128" rx="64" />
-              <path fill="currentColor" d="M84.454 74.038C84.454 66.166 76.486 59.446 72.358 53.782C81.958 44.182 78.406 37.75 70.15 37.75C63.046 37.75 55.558 42.07 55.558 49.558C55.558 51.67 56.23 53.686 57.19 55.606C54.022 58.102 49.606 60.982 43.75 64.534L46.534 70.486C52.582 67.51 57.67 64.726 61.798 62.038C66.214 66.934 71.206 71.254 71.206 74.71C71.206 78.166 65.638 79.126 48.742 78.262L48.454 90.262C76.294 90.55 84.454 82.678 84.454 74.038Z" />
-            </svg>
-          </a>
+          <Link href="/">
+            <a className="flex w-24 h-24 text-yellow-500 rounded-full rise" aria-label="Home">
+              <svg className="w-24 h-24 rounded-full" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect className="text-gray-900" fill="currentColor" width="128" height="128" rx="64" />
+                <path fill="currentColor" d="M84.454 74.038C84.454 66.166 76.486 59.446 72.358 53.782C81.958 44.182 78.406 37.75 70.15 37.75C63.046 37.75 55.558 42.07 55.558 49.558C55.558 51.67 56.23 53.686 57.19 55.606C54.022 58.102 49.606 60.982 43.75 64.534L46.534 70.486C52.582 67.51 57.67 64.726 61.798 62.038C66.214 66.934 71.206 71.254 71.206 74.71C71.206 78.166 65.638 79.126 48.742 78.262L48.454 90.262C76.294 90.55 84.454 82.678 84.454 74.038Z" />
+              </svg>
+            </a>
+          </Link>
         </div>
 
         <div className="items-center justify-end flex-1 hidden sm:flex">
@@ -27,7 +30,7 @@ export default function Nav() {
               )}
             </NavLink>
 
-            <NavLink href="/work">
+            <NavLink href={`/work`}>
               {({ active }) => (
                 <a className={`flex items-center leading-8 text-gray-500 transition duration-200 ease-in-out hover:text-white ${active ? 'active' : ''}`}>
                   <svg className="w-4 h-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -53,10 +56,10 @@ export default function Nav() {
             </a>
           </div>
 
-          <a className="flex items-center px-6 py-3 ml-6 text-yellow-900 uppercase bg-yellow-400 rounded-full contact-button rise" href="mailto:hi@sammagee.me">
+          <a className="flex items-center px-6 py-3 ml-6 text-yellow-900 uppercase bg-yellow-400 rounded-full contact-button rise hover:bg-yellow-300 group hover:text-yellow-800" href="mailto:hi@sammagee.me">
             <span className="mt-1">Contact</span>
 
-            <svg className="w-4 ml-2 text-yellow-700 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <svg className="w-4 ml-2 text-yellow-700 fill-current group-hover:text-yellow-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
             </svg>
@@ -96,8 +99,8 @@ export default function Nav() {
                         <Menu.Item>
                           <NavLink href="/">
                             {({ active }) => (
-                              <a className={`hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
-                                Home
+                              <a className={`leading-none hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
+                                <span className="mt-1">Home</span>
                               </a>
                             )}
                           </NavLink>
@@ -105,11 +108,32 @@ export default function Nav() {
                         <Menu.Item>
                           <NavLink href="/work">
                             {({ active }) => (
-                              <a className={`hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
-                                Work
+                              <a className={`leading-none hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
+                                <span className="mt-1">Work</span>
                               </a>
                             )}
                           </NavLink>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <a className="flex items-center justify-between px-6 py-3 text-xl leading-none text-gray-400 transition duration-200 ease-in-out hover:bg-gray-800 hover:text-white" href="https://github.com/sammagee" target="_blank" rel="noopener noreferrer">
+                            <span className="mt-1">GitHub</span>
+
+                            <svg className="w-4 h-4 -mt-1 text-gray-600" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                              <polyline points="15 3 21 3 21 9"></polyline>
+                              <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                          </a>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <a className="flex items-center justify-between px-6 py-3 text-xl leading-none text-yellow-900 bg-yellow-400 contact-button hover:bg-yellow-300 hover:text-yellow-800 group" href="mailto:hi@sammagee.me">
+                            <span className="mt-1">Contact</span>
+
+                            <svg className="w-4 text-yellow-700 fill-current group-hover:text-yellow-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                            </svg>
+                          </a>
                         </Menu.Item>
                       </div>
                     </Menu.Items>
