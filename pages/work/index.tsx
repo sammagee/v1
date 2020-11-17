@@ -26,9 +26,9 @@ export default function Work({
 
       <Layout>
         <section className="container px-8 py-48 mx-auto space-y-8">
-          <h2 className="text-5xl font-bold leading-none text-center text-gray-600">
+          <h1 className="text-5xl font-bold leading-none text-center text-white">
             Work
-          </h2>
+          </h1>
 
           <div className="flex flex-wrap items-start justify-center -mx-4">
             {projects.map(project => (
