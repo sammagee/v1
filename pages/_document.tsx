@@ -9,12 +9,12 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html className="bg-yellow-400 text-sm sm:text-base font-sans" lang="en-US">
+      <Html className="font-sans text-sm bg-yellow-400 sm:text-base" lang="en-US">
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         </Head>
-        <body className="bg-gray-900 font-sans min-h-screen">
+        <body className="min-h-screen font-sans bg-gray-800">
           <Main />
           <NextScript />
         </body>

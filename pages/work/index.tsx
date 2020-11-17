@@ -20,17 +20,22 @@ export default function Work({
       </Head>
 
       <Layout>
-        <ul>
-          {allData.map(({ id, date, title }) => (
-            <li key={id}>
-              <span>{title}</span>
-              <br />
-              <small>
-              <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+        <div className="container px-8 py-48 mx-auto space-y-8">
+          <div>
+            <h2 className="text-5xl font-bold text-gray-700">Projects</h2>
+          </div>
+          <ul>
+            {allData.map(({ id, date, title }) => (
+              <li key={id}>
+                <span>{title}</span>
+                <br />
+                <small>
+                <Date dateString={date} />
+                </small>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Layout>
     </>
   )

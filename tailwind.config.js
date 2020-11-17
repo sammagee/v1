@@ -1,7 +1,7 @@
 module.exports = {
   future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   },
   purge: [
     './pages/**/*.tsx',
@@ -9,8 +9,20 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'me': 'url(/images/me.svg)'
+      colors: {
+        white: '#ffffff',
+        gray: {
+          50: '#f9f9f9',
+          100: '#f2f2f2',
+          200: '#dedee1',
+          300: '#cbc9d0',
+          400: '#909099',
+          500: '#5e5e66',
+          600: '#414148',
+          700: '#303136',
+          800: '#1e1e1f',
+          900: '#131315',
+        },
       },
       fontFamily: {
         sans: [
@@ -28,7 +40,15 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"'
         ]
-      }
+      },
+      height: {
+        '0.5': '0.125rem',
+      },
+      spacing: {
+        '0.5': '0.125rem',
+        '4.5': '1.125rem',
+        '6.5': '1.625rem',
+      },
     },
   },
   variants: {},
