@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Date from '../../components/date'
+import Image from 'next/image'
 import Layout from '../../components/layout'
 import { getSortedData } from '../../lib/content'
 
@@ -35,7 +36,13 @@ export default function Work({
                 key={project.id}
               >
                 <article className="p-8 transition duration-200 ease-in-out bg-gray-900 rounded-lg group-hover:shadow-outline group-focus:shadow-outline">
-                  <img className="w-full transition-all duration-200 ease-in-out rounded-lg shadow-lg group-hover:filter-none group-focus:filter-none filter-grayscale" src={project.image} alt={project.title}/>
+                  <Image
+                    className="w-full h-auto transition-all duration-200 ease-in-out rounded-lg shadow-lg group-hover:filter-none group-focus:filter-none filter-grayscale"
+                    src={project.image}
+                    alt={project.title}
+                    width="1920"
+                    height="1080"
+                  />
                   <h3 className="mt-6 text-2xl">
                     {project.title}
                   </h3>
