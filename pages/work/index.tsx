@@ -14,6 +14,7 @@ export default function Work({
     image: string,
     link: string,
     title: string,
+    tags: string,
   }[]
 }) {
   return (
@@ -28,11 +29,11 @@ export default function Work({
             Work
           </h2>
 
-          <div className="flex flex-wrap justify-center -mx-4">
-            {projects.map((project) => (
+          <div className="flex flex-wrap items-start justify-center -mx-4">
+            {projects.map(project => (
               <a
                 href={project.link}
-                className="block w-full mx-4 mb-8 text-white rounded-lg shadow-lg flex-no-shrink hover:shadow-xl sm:w-1/2 md:w-1/3 lg:w-1/4 rise group"
+                className="flex-grow-0 block w-full mx-4 mb-8 text-white rounded-lg shadow-lg flex-no-shrink hover:shadow-xl sm:w-1/2 md:w-1/3 lg:w-1/4 rise group"
                 key={project.id}
               >
                 <article className="p-8 transition duration-200 ease-in-out bg-gray-900 rounded-lg group-hover:shadow-outline group-focus:shadow-outline">
@@ -47,6 +48,16 @@ export default function Work({
                     {project.title}
                   </h3>
                   <Date className="text-gray-400" dateString={project.date} />
+                  {project.tags && (
+                    <div className="flex flex-wrap mt-4 -m-2">
+                      {project.tags.split(', ').map(tag => (
+                        <span className="inline-flex items-center px-3 py-1 mx-1 my-1 text-sm bg-gray-800 rounded-full">
+                          <span className="w-2 h-2 bg-gray-900 rounded-full"></span>
+                          <span className="inline-block mt-1 ml-2 leading-none">{tag}</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </article>
               </a>
             ))}

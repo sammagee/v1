@@ -18,7 +18,7 @@ export function getSortedData(type: string) {
 
     return {
       id,
-      ...(matterResult.data as { date: string, link: string, title: string }),
+      ...(matterResult.data as { date: string, link: string, title: string, tags: string }),
       image: `/images/${type}/${matterResult.data.image}`,
     }
   })
@@ -53,7 +53,7 @@ export async function getData(type, id) {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { date: string, link: string, title: string }),
+    ...(matterResult.data as { date: string, link: string, title: string, tags: string }),
     image: `/images/${type}/${matterResult.data.image}`,
   }
 }
