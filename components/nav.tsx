@@ -63,7 +63,7 @@ export default function Nav() {
           </a>
         </div>
 
-        <div className="relative inline-block text-left sm:hidden">
+        <div className="relative inline-block mr-8 text-left sm:hidden">
           <Menu>
             {({ open }) => (
               <>
@@ -83,35 +83,37 @@ export default function Nav() {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items
-                    static
-                    className="absolute right-0 w-56 -mt-12 -mr-4 origin-top-right bg-gray-900 rounded-md shadow-lg outline-none"
-                  >
-                    <div className="px-4 py-5">
-                      <span className="text-xl leading-5 text-gray-200">Menu</span>
-                    </div>
+                  <div className="absolute right-0 w-56 -mr-5 origin-top-right rounded-md shadow-lg -mt-14">
+                    <Menu.Items
+                      static
+                      className="overflow-hidden bg-gray-900 rounded-md outline-none"
+                    >
+                      <div className="p-6">
+                        <span className="text-2xl leading-5 text-gray-200">Menu</span>
+                      </div>
 
-                    <div>
-                      <Menu.Item>
-                        <NavLink href="/">
-                          {({ active }) => (
-                            <a className={`flex items-center px-4 py-1 text-lg leading-8 transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
-                              Home
-                            </a>
-                          )}
-                        </NavLink>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <NavLink href="/work">
-                          {({ active }) => (
-                            <a className={`flex items-center px-4 py-1 text-lg leading-8 transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
-                              Work
-                            </a>
-                          )}
-                        </NavLink>
-                      </Menu.Item>
-                    </div>
-                  </Menu.Items>
+                      <div>
+                        <Menu.Item>
+                          <NavLink href="/">
+                            {({ active }) => (
+                              <a className={`hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
+                                Home
+                              </a>
+                            )}
+                          </NavLink>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <NavLink href="/work">
+                            {({ active }) => (
+                              <a className={`hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
+                                Work
+                              </a>
+                            )}
+                          </NavLink>
+                        </Menu.Item>
+                      </div>
+                    </Menu.Items>
+                  </div>
                 </Transition>
               </>
             )}
