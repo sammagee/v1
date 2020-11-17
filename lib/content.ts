@@ -18,7 +18,8 @@ export function getSortedData(type: string) {
 
     return {
       id,
-      ...(matterResult.data as { date: string, title: string })
+      ...(matterResult.data as { date: string, link: string, title: string }),
+      image: `/images/${type}/${matterResult.data.image}`,
     }
   })
 
@@ -34,7 +35,7 @@ export function getAllIds(type: string) {
   return fileNames.map(fileName => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, '')
+        id: fileName.replace(/\.md$/, ''),
       }
     }
   })
@@ -52,6 +53,7 @@ export async function getData(type, id) {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { date: string; title: string })
+    ...(matterResult.data as { date: string, link: string, title: string }),
+    image: `/images/${type}/${matterResult.data.image}`,
   }
 }

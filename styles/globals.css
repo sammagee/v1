@@ -111,6 +111,18 @@
 
 @tailwind utilities;
 
-.cursor-help {
-  cursor: help;
+@layer utilities {
+  .cursor-help {
+    cursor: help;
+  }
+
+  @variants hover, focus, group-hover, group-focus {
+    .filter-none {
+      filter: none;
+    }
+
+    .filter-grayscale {
+      filter: grayscale(100%);
+    }
+  }
 }

@@ -9,8 +9,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'outline': '0 0 0 3px rgba(236, 201, 75, 0.5)',
+      },
       colors: {
-        white: '#ffffff',
         gray: {
           50: '#f9f9f9',
           100: '#f2f2f2',
@@ -51,6 +53,7 @@ module.exports = {
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    boxShadow: ['responsive', 'hover', 'focus', 'group-hover', 'group-focus'],
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
   },
   plugins: [],
