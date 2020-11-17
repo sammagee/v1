@@ -42,8 +42,8 @@ export default function Work({
                     className="w-full h-auto transition-all duration-200 ease-in-out rounded-lg shadow-lg group-hover:filter-none group-focus:filter-none filter-grayscale"
                     src={project.image}
                     alt={project.title}
-                    width="1920"
-                    height="1080"
+                    width={1920}
+                    height={1080}
                   />
                   <h3 className="mt-4 text-2xl">
                     {project.title}
