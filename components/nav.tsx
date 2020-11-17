@@ -4,7 +4,7 @@ import { Menu, Transition } from '@headlessui/react'
 
 export default function Nav() {
     return (
-      <header className="container fixed top-0 left-0 right-0 z-10 flex items-center justify-between p-8 mx-auto bg-gray-800">
+      <header className="container fixed top-0 left-0 right-0 z-10 flex items-center justify-between p-8 mx-auto">
         <div className="flex items-center flex-1">
           <Link href="/">
             <a className="flex w-24 h-24 text-yellow-500 rounded-full rise" aria-label="Home">
@@ -16,7 +16,7 @@ export default function Nav() {
           </Link>
         </div>
 
-        <div className="items-center justify-end flex-1 hidden sm:flex">
+        <div className="items-center justify-end hidden py-4 pl-12 pr-4 bg-gray-900 rounded-full shadow-md sm:flex">
           <div className="flex items-center space-x-6 navigation">
             <NavLink href="/">
               {({ active }) => (
@@ -70,7 +70,7 @@ export default function Nav() {
           <Menu>
             {({ open }) => (
               <>
-                <Menu.Button className={`flex items-center justify-center w-6 h-10 transition duration-200 ease-in-out border-none rounded select-none focus:outline-none group ${open ? 'z-50' : ''}`}>
+                <Menu.Button className={`flex items-center justify-center rounded-full w-16 h-16 -mr-5 transition duration-200 ease-in-out border-none shadowselect-none focus:outline-none group ${open ? 'z-50' : 'bg-gray-900 rise'}`}>
                   <div className="flex flex-col items-center justify-center w-full h-full pointer-events-none">
                     <span className={`h-0.5 w-6 block bg-gray-400 group-hover:bg-white rounded-full transition-all transform duration-200 ease-in-out ${open ? 'translate-y-px rotate-45' : 'rotate-0 -translate-y-1'}`}></span>
                     <span className={`h-0.5 w-6 block bg-gray-400 group-hover:bg-white rounded-full transition-all transform duration-200 ease-in-out ${open ? '-translate-y-px -rotate-45' : 'rotate-0 translate-y-1'}`}></span>
@@ -86,7 +86,7 @@ export default function Nav() {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <div className="absolute right-0 w-56 -mr-5 origin-top-right rounded-md shadow-xl -mt-14">
+                  <div className="absolute right-0 w-56 -mt-16 -mr-5 origin-top-right rounded-md shadow-xl">
                     <Menu.Items
                       static
                       className="overflow-hidden bg-gray-900 rounded-md outline-none"
