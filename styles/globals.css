@@ -81,19 +81,19 @@
 }
 
 .navigation a.active {
-  @apply border-b-2 border-yellow-400 text-white;
+  @apply text-white;
 }
 
-.navigation a:not(.active)::after {
-  @apply absolute bottom-0 left-0 w-full bg-yellow-400 transition-all ease-in-out duration-200 transform origin-bottom-left scale-0;
+.navigation a .link-text::after {
+  @apply w-1 h-1 -mb-1 rounded-full absolute bottom-0 left-0 bg-yellow-400 transition-all ease-in-out duration-200 transform scale-0 mx-auto;
   content: '';
-  height: 2px;
-  margin-bottom: -2px;
+  left: calc(50% - 0.125rem);
 }
 
-.navigation a:not(.active):focus::after,
-.navigation a:not(.active):hover::after {
-  @apply transform scale-100 origin-bottom-right;
+.navigation a.active .link-text::after,
+.navigation a:not(.active):focus .link-text::after,
+.navigation a:not(.active):hover .link-text::after {
+  @apply transform scale-100;
 }
 
 .contact-button svg {
