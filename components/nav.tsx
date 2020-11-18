@@ -21,7 +21,7 @@ export default function Nav() {
             <NavLink href="/">
               {({ active }) => (
                 <a className={`flex items-center leading-8 text-gray-500 transition duration-200 ease-in-out hover:text-white ${active ? 'active' : ''}`}>
-                  <svg className="w-4 h-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 text-gray-600 transition duration-200 ease-in-out group-hover:text-gray-500 group-focus:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
 
@@ -32,26 +32,25 @@ export default function Nav() {
 
             <NavLink href={`/work`}>
               {({ active }) => (
-                <a className={`flex items-center leading-8 text-gray-500 transition duration-200 ease-in-out hover:text-white ${active ? 'active' : ''}`}>
-                  <svg className="w-4 h-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <a className={`flex items-center leading-8 text-gray-500 transition duration-200 ease-in-out group hover:text-white ${active ? 'active' : ''}`}>
+                  <svg className="w-4 h-4 text-gray-600 transition duration-200 ease-in-out group-hover:text-gray-500 group-focus:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
+
                   <span className="mt-1 ml-1 link-text">Work</span>
                 </a>
               )}
             </NavLink>
 
-            <a className="flex items-center text-gray-500 hover:text-white" href="https://github.com/sammagee" target="_blank" rel="noopener noreferrer">
-              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <a className="flex items-center text-gray-500 hover:text-white group" href="//github.com/sammagee" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <svg className="w-4 h-4 text-gray-600 transition duration-200 ease-in-out group-hover:text-gray-500 group-focus:text-gray-500" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
               </svg>
+            </a>
 
-              <span className="mt-1 ml-1 leading-8 link-text">GitHub</span>
-
-              <svg className="w-3 h-3 ml-1 text-gray-600" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
+            <a className="flex items-center text-gray-500 hover:text-white group" href="//twitter.com/sammagee" target="_blank" rel="noopener noreferrer" title="Twitter">
+              <svg className="w-4 h-4 text-gray-600 transition duration-200 ease-in-out group-hover:text-gray-500 group-focus:text-gray-500" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
               </svg>
             </a>
           </div>
@@ -95,48 +94,65 @@ export default function Nav() {
                         <span className="text-2xl leading-5 text-gray-200">Menu</span>
                       </div>
 
-                      <div>
-                        <Menu.Item>
-                          <NavLink href="/">
-                            {({ active }) => (
-                              <a className={`leading-none hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
-                                {active && <span className="absolute top-0 left-0 w-1 h-full bg-yellow-500 rounded-r-full"></span>}
-                                <span className="mt-1">Home</span>
-                              </a>
-                            )}
-                          </NavLink>
-                        </Menu.Item>
-                        <Menu.Item>
-                          <NavLink href="/work">
-                            {({ active }) => (
-                              <a className={`leading-none hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
-                                {active && <span className="absolute top-0 left-0 w-1 h-full bg-yellow-500 rounded-r-full"></span>}
-                                <span className="mt-1">Work</span>
-                              </a>
-                            )}
-                          </NavLink>
-                        </Menu.Item>
-                        <Menu.Item>
-                          <a className="flex items-center justify-between px-6 py-3 text-xl leading-none text-gray-400 transition duration-200 ease-in-out hover:bg-gray-800 hover:text-white" href="https://github.com/sammagee" target="_blank" rel="noopener noreferrer">
-                            <span className="mt-1">GitHub</span>
+                      <div className="divide-y divide-gray-800">
+                        <div>
+                          <Menu.Item>
+                            <NavLink href="/">
+                              {({ active }) => (
+                                <a className={`leading-none hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
+                                  {active && <span className="absolute top-0 left-0 w-1 h-full bg-yellow-500 rounded-r-full"></span>}
+                                  <span className="mt-1">Home</span>
+                                </a>
+                              )}
+                            </NavLink>
+                          </Menu.Item>
+                          <Menu.Item>
+                            <NavLink href="/work">
+                              {({ active }) => (
+                                <a className={`leading-none hover:bg-gray-800 flex items-center px-6 py-3 text-xl transition duration-200 ease-in-out hover:text-white ${active ? 'text-white' : 'text-gray-400'}`}>
+                                  {active && <span className="absolute top-0 left-0 w-1 h-full bg-yellow-500 rounded-r-full"></span>}
+                                  <span className="mt-1">Work</span>
+                                </a>
+                              )}
+                            </NavLink>
+                          </Menu.Item>
+                        </div>
 
-                            <svg className="w-4 h-4 -mt-1 text-gray-600" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                              <polyline points="15 3 21 3 21 9"></polyline>
-                              <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                          </a>
-                        </Menu.Item>
-                        <Menu.Item>
-                          <a className="flex items-center justify-between px-6 py-3 text-xl leading-none text-yellow-900 bg-yellow-400 contact-button hover:bg-yellow-300 hover:text-yellow-800 group" href="mailto:hi@sammagee.me">
-                            <span className="mt-1">Contact</span>
+                        <div>
+                          <Menu.Item>
+                            <a className="flex items-center justify-between px-6 py-3 text-xl leading-none text-gray-400 transition duration-200 ease-in-out hover:bg-gray-800 hover:text-white" href="//github.com/sammagee" target="_blank" rel="noopener noreferrer">
+                              <span className="mt-1">GitHub</span>
 
-                            <svg className="w-4 text-yellow-700 fill-current group-hover:text-yellow-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                            </svg>
-                          </a>
-                        </Menu.Item>
+                              <svg className="w-4 h-4 -mt-1 text-gray-600" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                              </svg>
+                            </a>
+                          </Menu.Item>
+                          <Menu.Item>
+                            <a className="flex items-center justify-between px-6 py-3 text-xl leading-none text-gray-400 transition duration-200 ease-in-out hover:bg-gray-800 hover:text-white" href="//twitter.com/sammagee" target="_blank" rel="noopener noreferrer">
+                              <span className="mt-1">Twitter</span>
+
+                              <svg className="w-4 h-4 -mt-1 text-gray-600" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                              </svg>
+                            </a>
+                          </Menu.Item>
+
+                          <Menu.Item>
+                            <a className="flex items-center justify-between px-6 py-3 text-xl leading-none text-yellow-900 bg-yellow-400 contact-button hover:bg-yellow-300 hover:text-yellow-800 group" href="mailto:hi@sammagee.me">
+                              <span className="mt-1">Contact</span>
+
+                              <svg className="w-4 text-yellow-700 fill-current group-hover:text-yellow-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                              </svg>
+                            </a>
+                          </Menu.Item>
+                        </div>
                       </div>
                     </Menu.Items>
                   </div>

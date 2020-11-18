@@ -64,7 +64,7 @@ export default function Work({
                   {project.tags && (
                     <div className="flex flex-wrap mt-4 -m-2">
                       {project.tags.split(', ').map(tag => (
-                        <span className="inline-flex items-center px-3 py-1 mx-1 my-1 text-sm bg-gray-800 rounded-full">
+                        <span className="inline-flex items-center px-3 py-1 mx-1 my-1 text-sm bg-gray-800 rounded-full" key={tag}>
                           <span className="w-2 h-2 bg-gray-900 rounded-full shadow-inner"></span>
                           <span className="inline-block mt-1 ml-2 leading-none">{tag.toLowerCase()}</span>
                         </span>

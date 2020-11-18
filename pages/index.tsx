@@ -18,7 +18,7 @@ export default function Home() {
           <h2 className="text-xl font-bold text-gray-500">
             <span className="text-gray-600">currently @</span>
             {' '}
-            <a className="inline-flex items-center transition duration-200 ease-in-out hover:text-gray-300" href="https://imtins.com" target="_blank">
+            <a className="inline-flex items-center transition duration-200 ease-in-out hover:text-gray-300" href="https://imtins.com" target="_blank" rel="noopener noreferrer">
               IMT Insurance
             </a>
           </h2>
