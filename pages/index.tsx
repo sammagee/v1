@@ -12,7 +12,7 @@ export default function Home() {
         <title>Sam Magee &ndash; Fullstack Devsigner</title>
       </Head>
 
-      <div className="flex items-center justify-center h-screen overflow-x-hidden bg-bottom bg-no-repeat bg-me">
+      <div className="relative flex items-center justify-center h-screen overflow-x-hidden">
         <hgroup className="z-40 text-center">
           <h1 className="text-5xl font-bold text-white">Sam Magee</h1>
           <h2 className="text-xl font-bold text-gray-500">

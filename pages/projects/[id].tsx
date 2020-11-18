@@ -51,7 +51,7 @@ export default function Details({ data }) {
           {data.tags && (
             <div className="flex flex-wrap justify-center -m-2">
               {data.tags.split(', ').map(tag => (
-                <span className="inline-flex items-center px-3 py-1 mx-1 my-1 text-sm bg-gray-900 rounded-full">
+                <span key={tag} className="inline-flex items-center px-3 py-1 mx-1 my-1 text-sm bg-gray-900 rounded-full">
                   <span className="w-2 h-2 bg-gray-800 rounded-full shadow-inner"></span>
                   <span className="inline-block mt-1 ml-2 leading-none text-gray-400">{tag.toLowerCase()}</span>
                 </span>
