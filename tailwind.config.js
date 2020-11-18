@@ -46,6 +46,9 @@ module.exports = {
       height: {
         '0.5': '0.125rem',
       },
+      lineHeight: {
+        '0': '0',
+      },
       spacing: {
         '14': '3.25rem',
       },
