@@ -54,12 +54,29 @@ module.exports = {
             {
               color: theme('colors.gray.300'),
               a: {
-                color: theme('colors.primary.400'),
+                color: theme('colors.gray.500'),
+                textDecoration: 'none',
                 transitionDuration: theme('transitionDuration.200'),
                 transitionProperty: theme('transitionProperty.colors'),
                 transitionTimingFunction: theme('transitionTimingFunction.in-out'),
-                '&:hover': {
-                  color: theme('colors.primary.300'),
+                '&:hover, &:focus': {
+                  color: theme('colors.gray.300'),
+                },
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: '0',
+                  left: '0',
+                  display: 'inline-block',
+                  width: '100%',
+                  height: em(2, 16),
+                  backgroundColor: theme('colors.gray.700'),
+                  transitionDuration: theme('transitionDuration.200'),
+                  transitionProperty: theme('transitionProperty.colors'),
+                  transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+                },
+                '&:hover::after, &:focus::after': {
+                  backgroundColor: theme('colors.gray.500'),
                 },
               },
               strong: {
@@ -93,7 +110,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ['group-hover'],
+      backgroundColor: ['group-hover', 'group-focus'],
       boxShadow: ['active', 'group-hover', 'focus-within'],
       ringWidth: ['hover'],
       textColor: ['group-hover', 'group-focus', 'focus-within'],
