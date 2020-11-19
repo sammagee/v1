@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -9,22 +11,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      boxShadow: {
-        'outline': '0 0 0 3px rgba(236, 201, 75, 0.5)',
-      },
       colors: {
-        gray: {
-          50: '#f9f9f9',
-          100: '#f2f2f2',
-          200: '#dedee1',
-          300: '#cbc9d0',
-          400: '#909099',
-          500: '#5e5e66',
-          600: '#414148',
-          700: '#303136',
-          800: '#1e1e1f',
-          900: '#131315',
-        },
+        gray: colors.gray,
+        orange: colors.orange,
+        teal: colors.teal,
       },
       fontFamily: {
         sans: [
@@ -49,15 +39,16 @@ module.exports = {
       lineHeight: {
         '0': '0',
       },
-      spacing: {
-        '14': '3.25rem',
-      },
     },
   },
   variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    boxShadow: ['responsive', 'hover', 'focus', 'group-hover', 'group-focus'],
-    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    extend: {
+      backgroundColor: ['group-hover'],
+      boxShadow: ['active', 'group-hover', 'focus-within'],
+      ringWidth: ['hover'],
+      textColor: ['group-hover', 'group-focus', 'focus-within'],
+      translate: ['active', 'group-hover', 'group-focus'],
+    },
   },
   plugins: [],
 }

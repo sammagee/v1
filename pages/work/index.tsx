@@ -36,8 +36,8 @@ export default function Work({
               href={`/projects/${project.id}`}
               key={project.id}
             >
-              <a className="flex-grow-0 block w-full mx-4 mb-8 text-white rounded-lg shadow-lg flex-no-shrink hover:shadow-xl sm:w-1/2 md:w-1/3 lg:w-1/4 rise group">
-                <article className="p-8 transition duration-200 ease-in-out bg-gray-900 rounded-lg group-hover:shadow-outline group-focus:shadow-outline">
+              <a className="flex-grow-0 block w-full mx-4 mb-8 text-white rounded-lg shadow-lg flex-no-shrink hover:shadow-xl hover:ring ring-yellow-400 ring-opacity-50 focus:ring sm:w-1/2 md:w-1/3 lg:w-1/4 rise group">
+                <article className="p-8 transition duration-200 ease-in-out bg-gray-900 rounded-lg">
                   <div className="w-full">
                     <Image
                       className="w-full transition-all duration-200 ease-in-out rounded-lg shadow-lg group-hover:filter-none group-focus:filter-none filter-grayscale"

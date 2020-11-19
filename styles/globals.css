@@ -60,28 +60,11 @@
 }
 
 ::selection {
-  @apply bg-yellow-500 text-black;
+  @apply bg-yellow-400 text-black;
 }
 
 .rise {
-  @apply shadow-md transition-all duration-200 ease-in-out transform;
-}
-
-.rise:focus,
-.rise:hover {
-  @apply shadow-lg -translate-y-1;
-}
-
-.rise:active {
-  @apply shadow-md translate-y-0;
-}
-
-.navigation a {
-  @apply border-b-2 border-transparent;
-}
-
-.navigation a.active {
-  @apply text-white;
+  @apply shadow-md transition-all duration-200 ease-in-out transform hover:shadow-lg hover:-translate-y-1 focus:shadow-lg focus:-translate-y-1 active:shadow-md active:translate-y-0;
 }
 
 .navigation a .link-text::after {
@@ -96,26 +79,9 @@
   @apply transform scale-100;
 }
 
-.contact-button svg {
-  @apply transition-all duration-200 ease-in-out transform;
-}
-
-.contact-button:focus svg,
-.contact-button:hover svg {
-  @apply translate-x-1;
-}
-
-.contact-button:active svg {
-  transform: translateX(0);
-}
-
 @tailwind utilities;
 
 @layer utilities {
-  .cursor-help {
-    cursor: help;
-  }
-
   @variants hover, focus, group-hover, group-focus {
     .filter-none {
       filter: none;
