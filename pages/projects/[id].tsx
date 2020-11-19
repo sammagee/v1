@@ -65,7 +65,7 @@ export default function Details({ data }) {
         </div>
 
         <div
-          className="mx-auto mt-8 prose lg:prose-lg"
+          className="mx-auto mt-16 prose lg:prose-lg"
           dangerouslySetInnerHTML={{ __html: data.contentHtml }}
         />
       </article>
