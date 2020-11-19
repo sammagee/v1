@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <div className="relative flex items-center justify-center h-screen overflow-x-hidden">
-        <hgroup className="z-40 text-center">
+        <hgroup className="z-10 text-center">
           <h1 className="text-5xl font-bold text-white">Sam Magee</h1>
           <h2 className="text-xl font-bold text-gray-500">
             <span className="text-gray-600">currently @</span>
