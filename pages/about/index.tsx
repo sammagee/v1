@@ -15,7 +15,7 @@ export default function About({ data }) {
           About
         </h1>
 
-        <div className="flex flex-wrap items-start justify-center -mx-4">
+        <div className="flex flex-wrap items-start justify-center">
           <article className="prose lg:prose-xl">
             <p>I'm a full-stack devsigner (developer & designer), currently based in WDM, IA. I've gone to school at Central College, and plan to begin my Master's program at Vanderbilt University in May of 2021.</p>
 
