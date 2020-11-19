@@ -49,7 +49,7 @@ export default function Work({
                       height={1080}
                     />
 
-                    <div className="absolute inset-0 transition-all duration-200 ease-in-out bg-gray-800 bg-opacity-70 group-hover:bg-opacity-0" />
+                    <div className="absolute inset-0 transition-all duration-200 ease-in-out bg-gray-800 rounded-lg bg-opacity-70 group-hover:bg-opacity-0" />
                   </div>
 
                   <h3 className="mt-4 text-2xl">
