@@ -8,20 +8,33 @@ function getPath(type: string) {
   return path.join(process.cwd(), `content/${type}`)
 }
 
-export function getSortedData(type: string) {
-  const fileNames = fs.readdirSync(getPath(type))
-  const allData = fileNames.map(fileName => {
-    const id = fileName.replace(/\.md$/, '')
-    const fullPath = path.join(getPath(type), fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const matterResult = matter(fileContents)
+async function parseData(type: string, id: string) {
+  const fullPath = path.join(getPath(type), `${id}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const matterResult = matter(fileContents)
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content)
+  const processedDescription = await remark()
+    .use(html)
+    .process(matterResult.data.description)
 
-    return {
-      id,
-      ...(matterResult.data as { date: string, description: string, link: string, title: string, tags: string }),
-      image: `/images/${type}/${matterResult.data.image}`,
-    }
-  })
+  return {
+    contentHtml: processedContent.toString(),
+    descriptionHtml: processedDescription.toString(),
+    ...(matterResult.data as { date: string, description: string, link: string, title: string, tags: string }),
+    image: `/images/${type}/${matterResult.data.image}`,
+  }
+}
+
+export async function getSortedData(type: string) {
+  const fileNames = fs.readdirSync(getPath(type))
+  const allData = await Promise.all(fileNames.map(async (fileName) => {
+    const id = fileName.replace(/\.md$/, '')
+    const content = await parseData(type, id)
+
+    return { id, ...content }
+  }))
 
   return allData.sort((a, b) => {
     if (a.date < b.date) return 1
@@ -42,18 +55,7 @@ export function getAllIds(type: string) {
 }
 
 export async function getData(type, id) {
-  const fullPath = path.join(getPath(type), `${id}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const matterResult = matter(fileContents)
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content)
-  const contentHtml = processedContent.toString()
+  const content = await parseData(type, id)
 
-  return {
-    id,
-    contentHtml,
-    ...(matterResult.data as { date: string, description: string, link: string, title: string, tags: string }),
-    image: `/images/${type}/${matterResult.data.image}`,
-  }
+  return { ...content }
 }

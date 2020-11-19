@@ -1,20 +1,29 @@
 const colors = require('tailwindcss/colors')
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, '$1')
+    .replace(/\.0$/, '')
+const rem = (px) => `${round(px / 16)}rem`
+const em = (px, base) => `${round(px / base)}em`
 
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
+  purge: {
+    mode: 'all',
+    content: [
+      './pages/**/*.tsx',
+      './components/**/*.tsx',
+    ],
   },
-  purge: [
-    './pages/**/*.tsx',
-    './components/**/*.tsx',
-  ],
   theme: {
     extend: {
       colors: {
         gray: colors.gray,
         orange: colors.orange,
         teal: colors.teal,
+
+        // set the primary color
+        primary: colors.amber,
       },
       fontFamily: {
         sans: [
@@ -39,6 +48,47 @@ module.exports = {
       lineHeight: {
         '0': '0',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: [
+            {
+              color: theme('colors.gray.300'),
+              a: {
+                color: theme('colors.primary.400'),
+                transitionDuration: theme('transitionDuration.200'),
+                transitionProperty: theme('transitionProperty.colors'),
+                transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+                '&:hover': {
+                  color: theme('colors.primary.300'),
+                },
+              },
+              strong: {
+                color: theme('colors.gray.300'),
+                fontWeight: theme('fontWeight.bold'),
+              },
+              'ol > li::before': {
+                content: 'counter(list-counter) "."',
+                position: 'absolute',
+                fontWeight: '400',
+                color: theme('colors.gray.500'),
+              },
+              'ul > li::before': {
+                content: '""',
+                position: 'absolute',
+                backgroundColor: theme('colors.gray.500'),
+                borderRadius: '50%',
+              },
+              code: {
+                backgroundColor: theme('colors.gray.900'),
+                borderRadius: rem(4),
+                color: theme('colors.gray.300'),
+                fontWeight: '600',
+                padding: `${em(6, 16)} ${em(8, 16)}`,
+              },
+            },
+          ],
+        },
+      }),
     },
   },
   variants: {
@@ -50,5 +100,7 @@ module.exports = {
       translate: ['active', 'group-hover', 'group-focus'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

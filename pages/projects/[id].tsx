@@ -9,17 +9,21 @@ export default function Details({ data }) {
     <Layout>
       <Head>
         <title>{data.title} &ndash; Sam Magee</title>
+
+        <meta name="description" content={data.description} />
       </Head>
 
-      <section className="container px-8 py-56 mx-auto">
-        <div className="w-full mx-auto overflow-hidden rounded-lg shadow-lg leading-0 sm:w-1/2 md:w-1/3">
+      <article className="container px-8 py-56 mx-auto">
+        <div className="relative w-full mx-auto overflow-hidden rounded-lg shadow-lg leading-0 sm:w-1/2 md:w-1/3 group">
           <Image
-            className="w-full transition-all duration-200 ease-in-out hover:filter-none focus:filter-none filter-grayscale"
+            className="w-full transition-all duration-200 ease-in-out filter-grayscale group-hover:filter-none"
             src={data.image}
             alt={data.title}
             width={1920}
             height={1080}
           />
+
+          <div className="absolute inset-0 transition-all duration-200 ease-in-out bg-gray-800 bg-opacity-70 group-hover:bg-opacity-0" />
         </div>
 
         <h1 className="mt-8 text-5xl font-bold leading-none text-center text-white">
@@ -60,10 +64,11 @@ export default function Details({ data }) {
           )}
         </div>
 
-        <div className="w-full py-6 mx-auto text-center text-gray-200 sm:w-2/3 md:w-1/3">
-          <p><strong>TL;DR</strong> &ndash; {data.description}</p>
-        </div>
-      </section>
+        <div
+          className="mx-auto mt-8 prose lg:prose-lg"
+          dangerouslySetInnerHTML={{ __html: data.contentHtml }}
+        />
+      </article>
     </Layout>
   )
 }

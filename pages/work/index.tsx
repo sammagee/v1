@@ -10,8 +10,10 @@ export default function Work({
   projects
 }: {
   projects: {
+    contentHtml: string,
     date: string,
     description: string,
+    descriptionHtml: string,
     id: string,
     image: string,
     link: string,
@@ -26,7 +28,7 @@ export default function Work({
       </Head>
 
       <section className="container px-8 py-56 mx-auto space-y-8">
-        <h1 className="text-5xl font-bold leading-none text-center text-white">
+        <h1 className="text-5xl font-bold text-center text-white">
           Work
         </h1>
 
@@ -36,16 +38,18 @@ export default function Work({
               href={`/projects/${project.id}`}
               key={project.id}
             >
-              <a className="flex-grow-0 block w-full mx-4 mb-8 text-white rounded-lg shadow-lg flex-no-shrink hover:shadow-xl hover:ring ring-yellow-400 ring-opacity-50 focus:ring sm:w-1/2 md:w-1/3 lg:w-1/4 rise group">
+              <a className="flex-grow-0 block w-full mx-4 mb-8 text-white rounded-lg shadow-lg flex-no-shrink hover:shadow-xl hover:ring ring-primary-400 ring-opacity-50 focus:ring sm:w-1/2 md:w-1/3 lg:w-1/4 rise group">
                 <article className="p-8 transition duration-200 ease-in-out bg-gray-900 rounded-lg">
-                  <div className="w-full">
+                  <div className="relative w-full overflow-hidden rounded-lg shadow-lg leading-0">
                     <Image
-                      className="w-full transition-all duration-200 ease-in-out rounded-lg shadow-lg group-hover:filter-none group-focus:filter-none filter-grayscale"
+                      className="w-full transition-all duration-200 ease-in-out group-hover:filter-none group-focus:filter-none filter-grayscale"
                       src={project.image}
                       alt={project.title}
                       width={1920}
                       height={1080}
                     />
+
+                    <div className="absolute inset-0 transition-all duration-200 ease-in-out bg-gray-800 bg-opacity-70 group-hover:bg-opacity-0" />
                   </div>
 
                   <h3 className="mt-4 text-2xl">
@@ -57,7 +61,7 @@ export default function Work({
                     dateString={project.date}
                   />
 
-                  <div className="py-2 text-sm text-gray-200">
+                  <div className="py-2 text-sm text-gray-300">
                     {project.description}
                   </div>
 
@@ -82,7 +86,7 @@ export default function Work({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projects = getSortedData('projects')
+  const projects = await getSortedData('projects')
 
   return {
     props: {
