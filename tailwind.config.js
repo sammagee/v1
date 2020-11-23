@@ -48,6 +48,9 @@ module.exports = {
       lineHeight: {
         '0': '0',
       },
+      screens: {
+        standalone: { raw: "(display-mode: standalone)" },
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: [
