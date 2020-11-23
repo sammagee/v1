@@ -57,6 +57,7 @@
 
 * {
   @apply outline-none relative;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
