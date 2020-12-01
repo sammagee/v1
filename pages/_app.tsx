@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
+        <meta name="viewport" content="initial-scale=1, viewport-fit=cover, user-scalable=no" />
         <link rel="apple-touch-icon" sizes="180x180" href="/pwa/images/apple-icon-180.jpg" />
         <link rel="apple-touch-icon" sizes="167x167" href="/pwa/images/apple-icon-167.jpg" />
         <link rel="apple-touch-icon" sizes="152x152" href="/pwa/images/apple-icon-152.jpg" />
