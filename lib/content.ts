@@ -22,7 +22,7 @@ async function parseData(type: string, id: string) {
   return {
     contentHtml: processedContent.toString(),
     descriptionHtml: processedDescription.toString(),
-    ...(matterResult.data as { date: string, description: string, link: string, title: string, tags: string }),
+    ...(matterResult.data as { date: string, description: string, link: string, git: string, title: string, tags: string }),
     image: `/images/${type}/${matterResult.data.image}`,
   }
 }

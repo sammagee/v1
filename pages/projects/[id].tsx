@@ -42,17 +42,32 @@ export default function Details({ data }) {
             />
           </div>
 
-          <a href={`//${data.link}`} className="flex items-center text-gray-500 transition duration-200 ease-in-out hover:text-gray-300 focus:text-gray-300 group" target="_blank group" rel="noopener noreferrer">
-            <svg className="w-4 h-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
-            </svg>
+          {data.link && (
+            <a href={`//${data.link}`} className="flex items-center text-gray-500 transition duration-200 ease-in-out hover:text-gray-300 focus:text-gray-300 group" target="_blank group" rel="noopener noreferrer">
+              <svg className="w-4 h-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+              </svg>
 
-            <span className="relative mt-1 ml-1">
-              {data.link}
+              <span className="relative mt-1 ml-1">
+                View Project
 
-              <span className="absolute bottom-0 left-0 inline-block w-full h-0.5 bg-gray-700 transition duration-200 ease-in-out group-hover:bg-gray-500 group-focus:bg-gray-500" />
-            </span>
-          </a>
+                <span className="absolute bottom-0 left-0 inline-block w-full h-0.5 bg-gray-700 transition duration-200 ease-in-out group-hover:bg-gray-500 group-focus:bg-gray-500" />
+              </span>
+            </a>)}
+
+          {data.git && (
+            <a href={`//${data.git}`} className="flex items-center text-gray-500 transition duration-200 ease-in-out hover:text-gray-300 focus:text-gray-300 group" target="_blank group" rel="noopener noreferrer">
+              <svg className="w-4 h-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+
+              <span className="relative mt-1 ml-1">
+                View Code
+
+                <span className="absolute bottom-0 left-0 inline-block w-full h-0.5 bg-gray-700 transition duration-200 ease-in-out group-hover:bg-gray-500 group-focus:bg-gray-500" />
+              </span>
+            </a>)}
         </div>
 
         <div className="flex justify-center w-full mx-auto mt-4 sm:w-2/3 md:w-1/3">
