@@ -35,7 +35,10 @@ export default function Work({
 
         <div className="flex flex-wrap items-start justify-center -mx-4">
           {projects.map(project => (
-            <article className="flex-grow-0 block w-full mx-4 mb-8 text-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 lg:w-1/4 flex-no-shrink group">
+            <article
+              key={project.id}
+              className="flex-grow-0 block w-full mx-4 mb-8 text-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 lg:w-1/4 flex-no-shrink group"
+            >
               <div className="overflow-hidden transition duration-200 ease-in-out bg-gray-900 rounded-lg">
                 <div className="p-8">
                   <div className="relative w-full overflow-hidden rounded-lg shadow-lg leading-0">
