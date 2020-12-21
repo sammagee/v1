@@ -1,6 +1,6 @@
 ---
 title: 'Py'
-date: '2020-12'
+date: '2020-12-21'
 link: 'py.krafted.dev'
 git: 'github.com/sammagee/py'
 image: 'py.png'

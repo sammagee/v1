@@ -1,6 +1,6 @@
 ---
 title: 'Krafted'
-date: '2020-12-21'
+date: '2020-12-20'
 link: 'krafted.dev'
 git: 'github.com/sammagee/krafted.dev'
 image: 'krafted.png'
