@@ -66,9 +66,11 @@
     @apply bg-primary-400 text-black;
   }
 
+  /* purgecss start ignore */
   #__next {
     @apply w-full flex-none flex flex-col;
   }
+  /* purgecss end ignore */
 
   .rise {
     @apply shadow-md transition-all duration-200 ease-in-out transform hover:shadow-lg hover:-translate-y-1 focus:shadow-lg focus:-translate-y-1 active:shadow-md active:translate-y-0;
