@@ -54,33 +54,38 @@
 
 @tailwind base;
 @tailwind components;
-
-* {
-  @apply outline-none relative;
-  -webkit-tap-highlight-color: transparent;
-}
-
-::selection {
-  @apply bg-primary-400 text-black;
-}
-
-.rise {
-  @apply shadow-md transition-all duration-200 ease-in-out transform hover:shadow-lg hover:-translate-y-1 focus:shadow-lg focus:-translate-y-1 active:shadow-md active:translate-y-0;
-}
-
-.navigation a .link-text::after {
-  @apply w-1 h-1 -mb-1 rounded-full absolute bottom-0 left-0 bg-primary-400 transition-all ease-in-out duration-200 transform scale-0 mx-auto;
-  content: '';
-  left: calc(50% - 0.125rem);
-}
-
-.navigation a.active .link-text::after,
-.navigation a:not(.active):focus .link-text::after,
-.navigation a:not(.active):hover .link-text::after {
-  @apply transform scale-100;
-}
-
 @tailwind utilities;
+
+@layer components {
+  * {
+    @apply outline-none relative;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    @apply bg-primary-400 text-black;
+  }
+
+  #__next {
+    @apply w-full flex-none flex flex-col;
+  }
+
+  .rise {
+    @apply shadow-md transition-all duration-200 ease-in-out transform hover:shadow-lg hover:-translate-y-1 focus:shadow-lg focus:-translate-y-1 active:shadow-md active:translate-y-0;
+  }
+
+  .navigation a .link-text::after {
+    @apply w-1 h-1 -mb-1 rounded-full absolute bottom-0 left-0 bg-primary-400 transition-all ease-in-out duration-200 transform scale-0 mx-auto;
+    content: '';
+    left: calc(50% - 0.125rem);
+  }
+
+  .navigation a.active .link-text::after,
+  .navigation a:not(.active):focus .link-text::after,
+  .navigation a:not(.active):hover .link-text::after {
+    @apply transform scale-100;
+  }
+}
 
 @layer utilities {
   @variants hover, focus, group-hover, group-focus {

@@ -1,11 +1,20 @@
-import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { useEffect } from 'react'
 import Date from '../components/date'
 import Layout from '../components/layout'
 import Me from '../components/me'
-import { getSortedData } from '../lib/content'
 
 export default function Home() {
+  useEffect(() => {
+    document.querySelector('html').classList.add('fixed', 'h-full', 'overflow-hidden')
+    document.querySelector('body').classList.add('fixed', 'w-full', 'min-h-full', 'flex', 'overflow-hidden')
+
+    return () => {
+      document.querySelector('html').classList.remove('fixed', 'h-full', 'overflow-hidden')
+      document.querySelector('body').classList.remove('fixed', 'w-full', 'min-h-full', 'flex', 'overflow-hidden')
+    }
+  }, [])
+
   return (
     <Layout>
       <Head>
