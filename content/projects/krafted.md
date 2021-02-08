@@ -2,7 +2,7 @@
 title: 'Krafted'
 date: '2020-12-20'
 link: 'krafted.dev'
-git: 'github.com/krafted/krafted.dev'
+git: 'github.com/sammagee/krafted.dev'
 image: 'krafted.png'
 tags: 'Next.js, TailwindCSS'
 description: 'Simple website for my independent studio'
