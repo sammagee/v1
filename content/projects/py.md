@@ -2,6 +2,7 @@
 title: 'Py'
 date: '2021-01-21'
 link: 'py.krafted.dev'
+git: 'github.com/krafted/py'
 image: 'py.png'
 tags: 'Laravel, WebAssembly, Vue, Python, TailwindCSS'
 description: 'An online Python editor with realtime output, using the `Pyodide` interpreter through WebAssembly'
