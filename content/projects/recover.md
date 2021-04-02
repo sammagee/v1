@@ -2,7 +2,6 @@
 title: 'Recover'
 date: '2021-04-02'
 link: 'recover.krafted.dev'
-git: 'github.com/sammagee/recover'
 image: 'recover.png'
 tags: 'Next.js, TailwindCSS'
 description: 'Retrieve and export your messages'
